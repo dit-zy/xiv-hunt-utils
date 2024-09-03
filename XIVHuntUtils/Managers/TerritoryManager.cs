@@ -12,7 +12,7 @@ using static DitzyExtensions.EnumExtensions;
 
 namespace XIVHuntUtils.Managers;
 
-public class TerritoryManager {
+public class TerritoryManager : ITerritoryManager {
 	private readonly IDalamudPluginInterface _pluginInterface;
 	private readonly IPluginLog _log;
 
@@ -30,12 +30,16 @@ public class TerritoryManager {
 
 	public Result<uint, string> GetTerritoryId(string territoryName) =>
 		FindTerritoryId(territoryName)
-			.ToResult<uint, string>($"Failed to find a territoryId for map name: {territoryName}");
+			.ToResult<uint, string>($"Failed to find a territoryId for territory name: {territoryName}");
 
-	public Maybe<string> GetTerritoryName(uint territoryId) =>
+	public Maybe<string> FindTerritoryName(uint territoryId) =>
 		_idToName
 			.MaybeGet(_pluginInterface.UiLanguage)
 			.Bind(nameMap => nameMap.MaybeGet(territoryId));
+	
+	public Result<string,string> GetTerritoryName(uint territoryId) =>
+		FindTerritoryName(territoryId)
+			.ToResult<string, string>($"Failed to find a territoryName for territory id: {territoryId}");
 
 	public IEnumerable<(Territory territory, uint territoryId)> GetTerritoryIds() =>
 		GetEnumValues<Territory>()
@@ -44,7 +48,7 @@ public class TerritoryManager {
 					.Map(territoryId => (territory, territoryId))
 			)
 			.ForEachError(error => _log.Debug(error))
-			.Values;
+			.Value;
 
 	public IEnumerable<(uint territoryId, uint instances)> GetDefaultInstancesForIds() =>
 		GetTerritoryIds()
@@ -131,12 +135,12 @@ public class TerritoryManager {
 }
 
 internal static class TerritoryManagerExtensions {
-	private static IDictionary<ClientLanguage, string> _langCodes = new Dictionary<ClientLanguage, string>() {
+	private static readonly IDictionary<ClientLanguage, string> LangCodes = new Dictionary<ClientLanguage, string>() {
 		{ ClientLanguage.Japanese, "jp" },
 		{ ClientLanguage.English, "en" },
 		{ ClientLanguage.German, "de" },
 		{ ClientLanguage.French, "fr" },
 	}.VerifyEnumDictionary();
 
-	public static string GetLanguageCode(this ClientLanguage language) => _langCodes[language];
+	public static string GetLanguageCode(this ClientLanguage language) => LangCodes[language];
 }
