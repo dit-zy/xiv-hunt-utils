@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Dalamud.NET.Sdk/9.0.2">
 
 	<PropertyGroup Label="feature">
@@ -17,6 +17,10 @@
 		<PackageReference Include="CSharpFunctionalExtensions" Version="2.42.5"/>
 		<PackageReference Include="DitzyExtensions" Version="1.1.0"/>
 		<PackageReference Remove="DalamudPackager"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Data/hunt_data.json"/>
 	</ItemGroup>
 
 </Project>
