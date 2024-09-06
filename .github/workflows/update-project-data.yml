@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-
+  perform-update:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
 
@@ -15,20 +15,39 @@ jobs:
       with:
         node-version: 22
 
+    - name: install dependencies
+      run: npm install csv-parse
+
     - name: get excel sheets
-      run: sh SupportTools/get-excel-sheets.sh
-    
+      run: SupportTools/get-excel-sheets.sh
+
     - name: update map metadata
       run: node SupportTools/update_map_metadata.js
 
+    - name: check generated file
+      run: |
+        if [[ 100 -lt "$(stat -c %s SupportTools/map_data.json)" ]]; then
+          echo "map_data file is probably fine ¯\\_(ツ)_/¯"
+          exit 0
+        fi
+        
+        echo "the generated map_data file is too small :thinky:"
+        echo "file content:"
+        cat SupportTools/map_data.json
+        exit 1
+
     - name: update hunt data
-      run: node SupportTools/extract_hunt_data.js
-      
+      run: node SupportTools/update_hunt_data.js
+
     - name: commit results
       run: |
-        git add .
+        # setting user per https://github.com/actions/checkout/blob/2d7d9f7ff5b310f983d059b68785b3c74d8b8edd/README.md#push-a-commit-using-the-built-in-token
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add SupportTools
+        git add XIVHuntUtils/Data
         git commit -m "[auto] update hunt data"
         git push origin
-    
+
     - name: done
       run: echo "data updates completed :3"
