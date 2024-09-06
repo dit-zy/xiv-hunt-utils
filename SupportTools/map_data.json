@@ -1,0 +1,254 @@
+{
+	"arr": {
+		"middle la noscea": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-1.00"
+		},
+		"lower la noscea": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-1.00"
+		},
+		"eastern la noscea": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "7.00"
+		},
+		"western la noscea": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-44.00"
+		},
+		"upper la noscea": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-15.00"
+		},
+		"western thanalan": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "12.00"
+		},
+		"central thanalan": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-32.00"
+		},
+		"eastern thanalan": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-66.00"
+		},
+		"southern thanalan": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-23.00"
+		},
+		"northern thanalan": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-39.00"
+		},
+		"central shroud": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-40.00"
+		},
+		"east shroud": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-36.00"
+		},
+		"south shroud": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-4.00"
+		},
+		"north shroud": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-82.00"
+		},
+		"coerthas central highlands": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "133.00"
+		},
+		"mor dhona": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-30.00"
+		},
+		"outer la noscea": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10.00"
+		},
+		"wolves' den pier": {
+			"xOffset": "-77.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		}
+	},
+	"hw": {
+		"coerthas western highlands": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "54.00"
+		},
+		"the dravanian forelands": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-157.00"
+		},
+		"the dravanian hinterlands": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "38.00"
+		},
+		"the churning mists": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-81.00"
+		},
+		"the sea of clouds": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-241.00"
+		},
+		"azys lla": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-601.00"
+		}
+	},
+	"sb": {
+		"the fringes": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "12.00"
+		},
+		"the ruby sea": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-2.00"
+		},
+		"yanxia": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-2.00"
+		},
+		"the peaks": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "46.00"
+		},
+		"the lochs": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-2.00"
+		},
+		"the azim steppe": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "1.00"
+		}
+	},
+	"shb": {
+		"lakeland": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-2.00"
+		},
+		"kholusia": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "0.00"
+		},
+		"amh araeng": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-117.00"
+		},
+		"il mheg": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "0.00"
+		},
+		"the rak'tika greatwood": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "0.00"
+		},
+		"the tempest": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "548.00"
+		}
+	},
+	"ew": {
+		"labyrinthos": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-225.00"
+		},
+		"thavnair": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-1.00"
+		},
+		"garlemald": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-20.00"
+		},
+		"mare lamentorum": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "0.00"
+		},
+		"ultima thule": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "44.00"
+		},
+		"elpis": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-161.00"
+		}
+	},
+	"dt": {
+		"urqopacha": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-222.00"
+		},
+		"kozama'uka": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-1.00"
+		},
+		"yak t'el": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-301.00"
+		},
+		"shaaloani": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-75.00"
+		},
+		"heritage found": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-15.00"
+		},
+		"living memory": {
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-20.00"
+		}
+	}
+}
