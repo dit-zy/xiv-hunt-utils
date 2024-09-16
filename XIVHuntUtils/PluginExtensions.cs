@@ -1,11 +1,8 @@
-﻿using System.Reflection;
-using Dalamud.Plugin;
+﻿using Dalamud.Plugin;
 
 namespace XIVHuntUtils;
 
-public static class PluginConstants { }
-
-public static class PluginConstantExtensions {
+public static class PluginExtensions {
 	public static string PluginName(this IDalamudPluginInterface pluginInterface) =>
 		pluginInterface.Manifest.Name;
 
