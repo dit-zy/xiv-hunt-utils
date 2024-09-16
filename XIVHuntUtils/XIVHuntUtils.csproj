@@ -4,7 +4,7 @@
 	<PropertyGroup Label="feature">
 		<Authors>dit-zy</Authors>
 		<Title>XIV Hunt Utils</Title>
-		<Version>1.1.0-SNAPSHOT</Version>
+		<Version>1.1.0</Version>
 		<Description>a collection of utilities for hunt plugins.</Description>
 		<RepositoryUrl>https://github.com/dit-zy/xiv-hunt-utils</RepositoryUrl>
 		<TargetFramework>net8.0-windows</TargetFramework>
