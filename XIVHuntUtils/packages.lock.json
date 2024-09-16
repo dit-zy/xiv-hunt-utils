@@ -10,9 +10,9 @@
       },
       "DitzyExtensions": {
         "type": "Direct",
-        "requested": "[1.1.1-SNAPSHOT, )",
-        "resolved": "1.1.1-SNAPSHOT",
-        "contentHash": "eIGiSQZKB/+2BUtheio2C9XzICzzVvLkog7ty/I5hIPrejw2hi1MAu/UzwbNjy6Nxwu8u1Bcn1IHsC7oXAr8ug==",
+        "requested": "[1.2.0, )",
+        "resolved": "1.2.0",
+        "contentHash": "j0FCJW/xrKAvAaj3jjD9+aYcJZrZ6TsYYGV650siiuvi5GzZ5zz8pe3MsJO0hy+k69RXnZW8ErIKezQZXzmgYQ==",
         "dependencies": {
           "CSharpFunctionalExtensions": "2.42.5"
         }

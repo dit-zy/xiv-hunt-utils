@@ -14,9 +14,10 @@
 	</PropertyGroup>
 
 	<ItemGroup Label="dependencies">
-		<PackageReference Include="CSharpFunctionalExtensions" Version="2.42.5"/>
-		<PackageReference Include="DitzyExtensions" Version="1.1.1-SNAPSHOT"/>
 		<PackageReference Remove="DalamudPackager"/>
+		
+		<PackageReference Include="CSharpFunctionalExtensions" Version="2.42.5"/>
+		<PackageReference Include="DitzyExtensions" Version="1.2.0"/>
 	</ItemGroup>
 
 	<ItemGroup>
