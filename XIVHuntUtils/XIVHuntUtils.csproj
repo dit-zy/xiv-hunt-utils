@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Dalamud.NET.Sdk/9.0.2">
 
 	<PropertyGroup Label="feature">
 		<Authors>dit-zy</Authors>
 		<Title>XIV Hunt Utils</Title>
-		<Version>1.0.0</Version>
-		<Description>a collection of utilities and managers for helping to build hunt plugins.</Description>
+		<Version>1.1.0-SNAPSHOT</Version>
+		<Description>a collection of utilities for hunt plugins.</Description>
 		<RepositoryUrl>https://github.com/dit-zy/xiv-hunt-utils</RepositoryUrl>
 		<TargetFramework>net8.0-windows</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -15,7 +15,7 @@
 
 	<ItemGroup Label="dependencies">
 		<PackageReference Include="CSharpFunctionalExtensions" Version="2.42.5"/>
-		<PackageReference Include="DitzyExtensions" Version="1.1.0"/>
+		<PackageReference Include="DitzyExtensions" Version="1.1.1-SNAPSHOT"/>
 		<PackageReference Remove="DalamudPackager"/>
 	</ItemGroup>
 

@@ -9,7 +9,7 @@ using Lumina.Excel.GeneratedSheets2;
 
 namespace XIVHuntUtils.Managers;
 
-public class MobManager {
+public class MobManager : IMobManager {
 	private readonly IPluginLog _log;
 
 	private readonly IDictionary<string, uint> _mobNameToId;
@@ -21,9 +21,16 @@ public class MobManager {
 		(_mobNameToId, _mobIdToName) = LoadData(dataManager);
 	}
 
-	public Maybe<uint> GetMobId(string mobName) => _mobNameToId.MaybeGet(mobName.AsLower());
+	public Maybe<uint> FindMobId(string mobName) => _mobNameToId.MaybeGet(mobName.AsLower());
 
-	public Maybe<string> GetMobName(uint mobId) => _mobIdToName.MaybeGet(mobId);
+	public Result<uint, string> GetMobId(string mobName) =>
+		FindMobId(mobName)
+			.ToResult<uint, string>($"Failed to find a mobId for mob name: {mobName}");
+
+	public Maybe<string> FindMobName(uint mobId) => _mobIdToName.MaybeGet(mobId);
+	public Result<string, string> GetMobName(uint mobId) => 
+		FindMobName(mobId)
+			.ToResult<string, string>($"Failed to find a mobName for mob id: {mobId}");
 
 	private (IDictionary<string, uint> nameToId, IDictionary<uint, string> idToName) LoadData(
 		IDataManager dataManager
