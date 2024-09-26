@@ -39,6 +39,7 @@ territoryTypes
 	.forEach(territory => {
 		const territoryName = placeNames[territory.placeNameId].name;
 		metadata.getOrDefault(territory.patch)[territoryName] = {
+			id: territory.rowId,
 			xOffset: maps[territory.mapId].xOffset,
 			yOffset: maps[territory.mapId].yOffset,
 			zOffset: territoryTypeTransients[territory.rowId].zOffset,
