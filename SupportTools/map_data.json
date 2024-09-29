@@ -1,91 +1,109 @@
 {
 	"arr": {
 		"middle la noscea": {
+			"id": 134,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-1.00"
 		},
 		"lower la noscea": {
+			"id": 135,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-1.00"
 		},
 		"eastern la noscea": {
+			"id": 137,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "7.00"
 		},
 		"western la noscea": {
+			"id": 138,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-44.00"
 		},
 		"upper la noscea": {
+			"id": 139,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-15.00"
 		},
 		"western thanalan": {
+			"id": 140,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "12.00"
 		},
 		"central thanalan": {
+			"id": 141,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-32.00"
 		},
 		"eastern thanalan": {
+			"id": 145,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-66.00"
 		},
 		"southern thanalan": {
+			"id": 146,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-23.00"
 		},
 		"northern thanalan": {
+			"id": 147,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-39.00"
 		},
 		"central shroud": {
+			"id": 148,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-40.00"
 		},
 		"east shroud": {
+			"id": 152,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-36.00"
 		},
 		"south shroud": {
+			"id": 153,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-4.00"
 		},
 		"north shroud": {
+			"id": 154,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-82.00"
 		},
 		"coerthas central highlands": {
+			"id": 155,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "133.00"
 		},
 		"mor dhona": {
+			"id": 156,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-30.00"
 		},
 		"outer la noscea": {
+			"id": 180,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-10.00"
 		},
 		"wolves' den pier": {
+			"id": 250,
 			"xOffset": "-77.00",
 			"yOffset": "0.00",
 			"zOffset": "-10000.00"
@@ -93,31 +111,37 @@
 	},
 	"hw": {
 		"coerthas western highlands": {
+			"id": 397,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "54.00"
 		},
 		"the dravanian forelands": {
+			"id": 398,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-157.00"
 		},
 		"the dravanian hinterlands": {
+			"id": 399,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "38.00"
 		},
 		"the churning mists": {
+			"id": 400,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-81.00"
 		},
 		"the sea of clouds": {
+			"id": 401,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-241.00"
 		},
 		"azys lla": {
+			"id": 402,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-601.00"
@@ -125,31 +149,37 @@
 	},
 	"sb": {
 		"the fringes": {
+			"id": 612,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "12.00"
 		},
 		"the ruby sea": {
+			"id": 613,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-2.00"
 		},
 		"yanxia": {
+			"id": 614,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-2.00"
 		},
 		"the peaks": {
+			"id": 620,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "46.00"
 		},
 		"the lochs": {
+			"id": 621,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-2.00"
 		},
 		"the azim steppe": {
+			"id": 622,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "1.00"
@@ -157,31 +187,37 @@
 	},
 	"shb": {
 		"lakeland": {
+			"id": 813,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-2.00"
 		},
 		"kholusia": {
+			"id": 814,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "0.00"
 		},
 		"amh araeng": {
+			"id": 815,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-117.00"
 		},
 		"il mheg": {
+			"id": 816,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "0.00"
 		},
 		"the rak'tika greatwood": {
+			"id": 817,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "0.00"
 		},
 		"the tempest": {
+			"id": 818,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "548.00"
@@ -189,31 +225,37 @@
 	},
 	"ew": {
 		"labyrinthos": {
+			"id": 956,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-225.00"
 		},
 		"thavnair": {
+			"id": 957,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-1.00"
 		},
 		"garlemald": {
+			"id": 958,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-20.00"
 		},
 		"mare lamentorum": {
+			"id": 959,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "0.00"
 		},
 		"ultima thule": {
+			"id": 960,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "44.00"
 		},
 		"elpis": {
+			"id": 961,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-161.00"
@@ -221,31 +263,37 @@
 	},
 	"dt": {
 		"urqopacha": {
+			"id": 1187,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-222.00"
 		},
 		"kozama'uka": {
+			"id": 1188,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-1.00"
 		},
 		"yak t'el": {
+			"id": 1189,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-301.00"
 		},
 		"shaaloani": {
+			"id": 1190,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-75.00"
 		},
 		"heritage found": {
+			"id": 1191,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-15.00"
 		},
 		"living memory": {
+			"id": 1192,
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-20.00"
