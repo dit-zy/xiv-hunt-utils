@@ -1,0 +1,48 @@
+{
+	"hw": {
+		"the dravanian hinterlands": [
+			{
+				"aetheryte": "idyllshire", "distanceModifier": 3.0, "position": {"x": 11.9, "y": 12.8, "z": 1.1},
+				"path": "aethernet: prologue gate (western hinterlands)"
+			},
+			{
+				"aetheryte": "idyllshire", "distanceModifier": 3.0, "position": {"x": 18.1, "y": 10.4, "z": 0.6},
+				"path": "aethernet: epilogue gate (eastern hinterlands)"
+			}
+		]
+	},
+	"sb": {
+		"the ruby sea": [
+			{
+				"aetheryte": "onokoro", "distanceModifier": 4.2, "position": {"x": 32.6, "y": 38.2, "z": 0.0},
+				"path": "confederate skipper"
+			},
+			{
+				"aetheryte": "kugane", "distanceModifier": 3.0, "position": {"x": 38.4, "y": 38.3, "z": 0.0},
+				"path": "aethernet: the ruby price"
+			},
+			{
+				"aetheryte": "tamamizu", "distanceModifier": 7.5, "position": {"x": 34.4, "y": 20.4, "z": 0.1},
+				"path": "leave the cave"
+			},
+			{
+				"aetheryte": "tamamizu", "distanceModifier": 5.6, "position": {"x": 27.3, "y": 18.0, "z": 0.0},
+				"path": "fly up through the water"
+			}
+		]
+	},
+	"ew": {
+		"garlemald": [
+			{
+				"aetheryte": "tertium", "distanceModifier": 4.4, "position": {"x": 31.5, "y": 12.8, "z": 0.4},
+				"path": "leave the station"
+			}
+		],
+		"mare lamentorum": [
+			{
+				"aetheryte": "bestways burrow", "distanceModifier": 8.8, "position": {"x": 21.3, "y": 19.6, "z": 1.1},
+				"path": "fly up out of the burrow"
+			}
+		]
+	}
+}

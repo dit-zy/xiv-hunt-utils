@@ -35,7 +35,10 @@ const territoryTypeTransients = getCsvData('TerritoryTypeTransient').map(transie
 console.log(' \nconstructing map metadata...')
 const metadata = {}
 territoryTypes
-	.filter(territory => territory.intendedUse == 1) // idk what this means, but it filters out most non-hunt territories.
+	// idk what `intendedUse` is, but it filters out most non-hunt territories.
+	// however, we need intendedUse 0 for city territories (e.g. limsa)
+	.filter(territory => territory.intendedUse == 0 || territory.intendedUse == 1)
+	.filter(territory => territory.placeNameId != 0)
 	.forEach(territory => {
 		const territoryName = placeNames[territory.placeNameId].name;
 		metadata.getOrDefault(territory.patch)[territoryName] = {

@@ -28,6 +28,10 @@ Array.prototype.uniqSorted = function (compareFn) {
 	return this.uniq().toSorted(compareFn)
 }
 
+Array.prototype.isEmpty = function() {
+	return this.length === 0
+}
+
 Set.prototype.map = function(callbackfn) {
 	return [...this].map(callbackfn)
 }
@@ -45,4 +49,30 @@ Object.prototype.getOrDefault = function (key, defaultValueSupplier = () => ({})
 
 Object.prototype.ownKeys = function() {
 	return Object.getOwnPropertyNames(this)
+}
+
+Object.prototype.contains = function(key) {
+	return this.hasOwnProperty(key)
+}
+
+Object.prototype.isEmpty = function() {
+	return this.ownKeys().isEmpty()
+}
+
+Object.prototype.map = function(transform) {
+	return this.ownKeys().map((key, i) => transform(key, this[key], i))
+}
+
+function indent(content, numIndents = 1) {
+	let contentLines
+	if (Array.isArray(content)) {
+		contentLines = content.flatMap(str => str.split('\n'))
+	} else {
+		contentLines = content.split('\n')
+	}
+	return contentLines.map(line => '\t'.repeat(numIndents) + line)
+}
+
+function indentS(content, numIndents = 1) {
+	return indent(content, numIndents).join('\n')
 }
