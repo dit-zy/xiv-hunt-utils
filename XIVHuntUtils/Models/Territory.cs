@@ -109,6 +109,8 @@ public static class TerritoryExtensions {
 
 	public static Territory AsTerritory(this uint territoryId) => _idToTerritory[territoryId];
 
+	public static uint Id(this Territory territory) => _territoryToId[territory];
+	
 	public static string Name(this Territory territory) => TerritoryNames[territory];
 
 	public static uint DefaultInstances(this Territory territory) => DefaultTerritoryInstances[territory];
