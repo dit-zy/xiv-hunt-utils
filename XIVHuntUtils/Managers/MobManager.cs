@@ -5,7 +5,7 @@ using Dalamud.Plugin.Services;
 using DitzyExtensions;
 using DitzyExtensions.Collection;
 using DitzyExtensions.Functional;
-using Lumina.Excel.GeneratedSheets2;
+using Lumina.Excel.Sheets;
 
 namespace XIVHuntUtils.Managers;
 
@@ -38,11 +38,11 @@ public class MobManager : IMobManager {
 		_log.Debug("Building mob data from game files...");
 
 		var notoriousMonsters = dataManager.GetExcelSheet<NotoriousMonster>(ClientLanguage.English)!
-			.Select(monster => monster.BNpcName.Row)
+			.Select(monster => monster.BNpcName.RowId)
 			.ToImmutableHashSet();
 
 		var nameToId = dataManager.GetExcelSheet<BNpcName>(ClientLanguage.English)!
-			.Select(name => (name: name.Singular.RawString.AsLower(), mobId: name.RowId))
+			.Select(name => (name: name.Singular.ToString().AsLower(), mobId: name.RowId))
 			.Where(name => notoriousMonsters.Contains(name.mobId))
 			.GroupBy(entry => entry.name)
 			.Select(

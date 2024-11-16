@@ -124,7 +124,7 @@ public class HuntManager : IHuntManager {
 			.Select(
 				spawnLists => (
 					spawnLists.ts.AsDict(),
-					spawnLists.us.Unwrap().AsDict(),
+					spawnLists.us.Flatten().AsDict(),
 					spawnLists.vs.AsDict(),
 					spawnLists.vs.SelectMany(
 						territoryMarks => territoryMarks.marks.Select(markId => (markId, territoryMarks.territoryId))
