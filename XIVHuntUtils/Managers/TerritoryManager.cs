@@ -6,7 +6,7 @@ using Dalamud.Plugin.Services;
 using DitzyExtensions;
 using DitzyExtensions.Collection;
 using DitzyExtensions.Functional;
-using Lumina.Excel.GeneratedSheets2;
+using Lumina.Excel.Sheets;
 using XIVHuntUtils.Models;
 using static DitzyExtensions.EnumExtensions;
 
@@ -67,7 +67,7 @@ public class TerritoryManager : ITerritoryManager {
 			.ToImmutableHashSet();
 
 		var supportedPlaceIds = dataManager.GetExcelSheet<PlaceName>(ClientLanguage.English)!
-			.Where(place => supportedMapNames.Contains(place.Name.RawString.AsLower()))
+			.Where(place => supportedMapNames.Contains(place.Name.ToString().AsLower()))
 			.ForEach(place => _log.Verbose("Found PlaceName: {0} | {1:l}", place.RowId, place.Name))
 			.Select(place => place.RowId)
 			.ToImmutableHashSet();
@@ -78,14 +78,14 @@ public class TerritoryManager : ITerritoryManager {
 					var placeNames = dataManager
 						.GetExcelSheet<PlaceName>(language)!
 						.Where(name => supportedPlaceIds.Contains(name.RowId))
-						.Select(name => (name.RowId, name.Name.RawString))
+						.Select(name => (name.RowId, name.Name.ToString()))
 						.AsDict();
 
 					var idToName = dataManager
 						.GetExcelSheet<TerritoryType>(language)!
-						.Where(territory => territory.TerritoryIntendedUse.Row == 1)
-						.Where(territory => placeNames.ContainsKey(territory.PlaceName.Row))
-						.Select(territory => (mapId: territory.RowId, name: placeNames[territory.PlaceName.Row]))
+						.Where(territory => territory.TerritoryIntendedUse.RowId == 1)
+						.Where(territory => placeNames.ContainsKey(territory.PlaceName.RowId))
+						.Select(territory => (mapId: territory.RowId, name: placeNames[territory.PlaceName.RowId]))
 						.GroupBy(map => map.name)
 						.Select(
 							grouping => {
