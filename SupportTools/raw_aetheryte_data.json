@@ -3153,5 +3153,15 @@
     "AethernetName": "Scanning Port Nine (Heritage Found)",
     "Aethernet": 15,
     "CanTeleport": false
+  },
+  {
+    "Id": 238,
+    "Zone": 1188,
+    "Position": { "X": 788.00, "Y": 14.20, "Z": -236.00 },
+    "SpawnRanges": [],
+    "AetheryteName": "Dock Poga",
+    "AethernetName": null,
+    "Aethernet": null,
+    "CanTeleport": true
   }
 ]
