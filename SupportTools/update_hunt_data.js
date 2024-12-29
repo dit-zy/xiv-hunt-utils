@@ -1,5 +1,5 @@
 ﻿const fs = require('node:fs')
-require('./data_utils.js')
+const du = require('./data_utils.js')
 
 console.log('parsing the raw spawn data...')
 const rawSpawnData = JSON.parse(fs.readFileSync('SupportTools/raw_spawn_data.json'))
@@ -31,20 +31,6 @@ function rawToMapPos(pos, map) {
 		y: 2048 / scale + rawZ / 50 + 1,
 		z: (rawY - mapMetadata[map].zOffset) / 100,
 	}
-}
-
-function indent(content, numIndents = 1) {
-	let contentLines
-	if (Array.isArray(content)) {
-		contentLines = content.flatMap(str => str.split('\n'))
-	} else {
-		contentLines = content.split('\n')
-	}
-	return contentLines.map(line => '\t'.repeat(numIndents) + line)
-}
-
-function indentS(content, numIndents = 1) {
-	return indent(content, numIndents).join('\n')
 }
 
 // === parse the raw data ===
@@ -107,12 +93,12 @@ const patchesJson = patches.ownKeys().map(patch => {
 
 		return [
 			`"${mapName}": {`,
-			indentS([
+			du.indentS([
 				'"marks": {',
-				indentS(mapMarksJson),
+				du.indentS(mapMarksJson),
 				'},',
 				'"spawns": [',
-				indentS(mapSpawnsJson),
+				du.indentS(mapSpawnsJson),
 				']',
 			]),
 			'}',
@@ -122,14 +108,14 @@ const patchesJson = patches.ownKeys().map(patch => {
 
 	return [
 		`"${patch}": {`,
-		indentS(mapsJson),
+		du.indentS(mapsJson),
 		'}',
 	].join('\n')
 }).join(',\n')
 
 const formattedHuntDataJson = [
 	'{',
-	indentS(patchesJson),
+	du.indentS(patchesJson),
 	'}',
 ].join('\n')
 

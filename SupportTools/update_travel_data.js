@@ -1,5 +1,5 @@
 ﻿const fs = require('node:fs')
-require('./data_utils.js')
+const du = require('./data_utils.js')
 
 console.log('parsing the raw aetheryte data...')
 const rawAetheryteData = JSON.parse(fs.readFileSync('SupportTools/raw_aetheryte_data.json'))
@@ -88,16 +88,16 @@ const patchesJson = formattedData.map((patch, patchData) => {
 			const aetherytesJson = mapData.aetherytes.map((aetheryteName, aetherytePos) =>
 				[
 					`${`"${aetheryteName}"`.padEnd(aetheryteNameLength)}: {`,
-					`"x": ${aetherytePos.x.toFixed(2).padStart(5)}, `,
-					`"y": ${aetherytePos.y.toFixed(2).padStart(5)}, `,
+					`"x": ${aetherytePos.x.toFixed(2).padStart(5)},`,
+					`"y": ${aetherytePos.y.toFixed(2).padStart(5)},`,
 					`"z": ${aetherytePos.z.toFixed(2).padStart(5)}`,
-					`}`,
-				].join('')
+					'}',
+				].join(' ')
 			).join(',\n')
 			mapAetherytesJson = [
 				'{',
-				indentS(aetherytesJson),
-				'},'
+				du.indentS(aetherytesJson),
+				'}'
 			].join('\n')
 		}
 
@@ -108,29 +108,31 @@ const patchesJson = formattedData.map((patch, patchData) => {
 			const nodesJson = mapData.travelNodes.map(travelNode => {
 				return [
 					'{',
-					indentS([
-						`"aetheryte": "${travelNode.aetheryte}" `,
-						`"distanceModifier": "${travelNode.distanceModifier}" `,
-						'"position": {',
-						`"x": ${travelNode.position.x} `,
-						`"y": ${travelNode.position.y} `,
-						`"z": ${travelNode.position.z}`,
-						'}',
-					].join('')),
-					indentS(`"path": ${travelNode.path}`),
+					du.indentS([
+						`"aetheryte": "${travelNode.aetheryte}"`,
+						`"distanceModifier": "${travelNode.distanceModifier}"`,
+						[
+							'"position": {',
+							`"x": ${travelNode.position.x},`,
+							`"y": ${travelNode.position.y},`,
+							`"z": ${travelNode.position.z}`,
+							'}',
+						].join(' '),
+						`"path": "${travelNode.path}"`
+					].join(',\n')),
 					'}',
 				].join('\n')
 			}).join(',\n')
 			travelNodesJson = [
 				'[',
-				indentS(nodesJson),
+				du.indentS(nodesJson),
 				']',
 			].join('\n')
 		}
 
 		return [
 			`"${mapName}": {`,
-			indentS([
+			du.indentS([
 				'"aetherytes": ' + mapAetherytesJson + ',',
 				'"travelNodes": ' + travelNodesJson,
 			]),
@@ -141,14 +143,14 @@ const patchesJson = formattedData.map((patch, patchData) => {
 
 	return [
 		`"${patch}": {`,
-		indentS(mapsJson),
+		du.indentS(mapsJson),
 		'}',
 	].join('\n')
 }).join(',\n')
 
 const formattedTravelDataJson = [
 	'{',
-	indentS(patchesJson),
+	du.indentS(patchesJson),
 	'}',
 ].join('\n')
 

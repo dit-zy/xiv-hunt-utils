@@ -28,15 +28,15 @@ Array.prototype.uniqSorted = function (compareFn) {
 	return this.uniq().toSorted(compareFn)
 }
 
-Array.prototype.isEmpty = function() {
+Array.prototype.isEmpty = function () {
 	return this.length === 0
 }
 
-Set.prototype.map = function(callbackfn) {
+Set.prototype.map = function (callbackfn) {
 	return [...this].map(callbackfn)
 }
 
-Set.prototype.flatMap = function(callback) {
+Set.prototype.flatMap = function (callback) {
 	return [...this].flatMap(callback)
 }
 
@@ -47,19 +47,19 @@ Object.prototype.getOrDefault = function (key, defaultValueSupplier = () => ({})
 	return this[key]
 }
 
-Object.prototype.ownKeys = function() {
+Object.prototype.ownKeys = function () {
 	return Object.getOwnPropertyNames(this)
 }
 
-Object.prototype.contains = function(key) {
+Object.prototype.contains = function (key) {
 	return this.hasOwnProperty(key)
 }
 
-Object.prototype.isEmpty = function() {
+Object.prototype.isEmpty = function () {
 	return this.ownKeys().isEmpty()
 }
 
-Object.prototype.map = function(transform) {
+Object.prototype.map = function (transform) {
 	return this.ownKeys().map((key, i) => transform(key, this[key], i))
 }
 
@@ -70,9 +70,15 @@ function indent(content, numIndents = 1) {
 	} else {
 		contentLines = content.split('\n')
 	}
-	return contentLines.map(line => '\t'.repeat(numIndents) + line)
+	const res = contentLines.map(line => '\t'.repeat(numIndents) + line);
+	return res
 }
 
 function indentS(content, numIndents = 1) {
 	return indent(content, numIndents).join('\n')
+}
+
+module.exports = {
+	indent,
+	indentS
 }
