@@ -1,0 +1,8 @@
+﻿services:
+  node:
+    build:
+      context: .
+      dockerfile: data-update-test.Dockerfile
+    working_dir: /src
+    volumes:
+    - ./:/src

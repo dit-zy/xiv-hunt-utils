@@ -1,6 +1,6 @@
-﻿#!/usr/bin/env bash
+#!/bin/bash
 
-set -euo pipefail
+set -eu
 
 function get_data_csv() {
   csv="$1"
