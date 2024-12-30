@@ -1,0 +1,501 @@
+{
+	"arr": {
+		"limsa lominsa upper decks": {
+			"aetherytes": {},
+			"travelNodes": []
+		},
+		"limsa lominsa lower decks": {
+			"aetherytes": {
+				"limsa lominsa lower decks": { "x": 19.80, "y": 21.48, "z": 100.21 }
+			},
+			"travelNodes": []
+		},
+		"ul'dah - steps of nald": {
+			"aetherytes": {
+				"ul'dah - steps of nald": { "x": 18.59, "y": 18.09, "z": 99.99 }
+			},
+			"travelNodes": []
+		},
+		"ul'dah - steps of thal": {
+			"aetherytes": {},
+			"travelNodes": []
+		},
+		"new gridania": {
+			"aetherytes": {
+				"new gridania": { "x": 22.14, "y": 22.08, "z": 100.03 }
+			},
+			"travelNodes": []
+		},
+		"old gridania": {
+			"aetherytes": {},
+			"travelNodes": []
+		},
+		"middle la noscea": {
+			"aetherytes": {
+				"summerford farms": { "x": 26.04, "y": 16.34, "z":  1.17 }
+			},
+			"travelNodes": []
+		},
+		"lower la noscea": {
+			"aetherytes": {
+				"moraby drydocks": { "x": 24.60, "y": 34.94, "z":  0.17 }
+			},
+			"travelNodes": []
+		},
+		"mist": {
+			"aetherytes": {},
+			"travelNodes": []
+		},
+		"eastern la noscea": {
+			"aetherytes": {
+				"costa del sol": { "x": 31.26, "y": 30.86, "z":  0.14 },
+				"wineport"     : { "x": 21.11, "y": 21.56, "z":  0.66 }
+			},
+			"travelNodes": []
+		},
+		"western la noscea": {
+			"aetherytes": {
+				"swiftperch": { "x": 34.51, "y": 31.75, "z":  0.56 },
+				"aleport"   : { "x": 26.70, "y": 25.85, "z":  0.24 }
+			},
+			"travelNodes": []
+		},
+		"upper la noscea": {
+			"aetherytes": {
+				"camp bronze lake": { "x": 30.23, "y": 23.37, "z":  0.21 }
+			},
+			"travelNodes": []
+		},
+		"western thanalan": {
+			"aetherytes": {
+				"horizon": { "x": 22.84, "y": 16.94, "z":  0.36 }
+			},
+			"travelNodes": []
+		},
+		"central thanalan": {
+			"aetherytes": {
+				"black brush station": { "x": 21.16, "y": 18.15, "z":  0.32 }
+			},
+			"travelNodes": []
+		},
+		"eastern thanalan": {
+			"aetherytes": {
+				"camp drybone": { "x": 13.75, "y": 24.33, "z":  0.09 }
+			},
+			"travelNodes": []
+		},
+		"southern thanalan": {
+			"aetherytes": {
+				"little ala mhigo" : { "x": 18.29, "y": 13.17, "z":  0.53 },
+				"forgotten springs": { "x": 14.95, "y": 29.61, "z":  0.34 }
+			},
+			"travelNodes": []
+		},
+		"northern thanalan": {
+			"aetherytes": {
+				"camp bluefog"             : { "x": 21.90, "y": 30.56, "z":  0.48 },
+				"ceruleum processing plant": { "x": 20.95, "y": 20.86, "z":  0.89 }
+			},
+			"travelNodes": []
+		},
+		"central shroud": {
+			"aetherytes": {
+				"bentbranch meadows": { "x": 21.74, "y": 22.20, "z":  0.41 }
+			},
+			"travelNodes": []
+		},
+		"east shroud": {
+			"aetherytes": {
+				"the hawthorne hut": { "x": 17.75, "y": 27.43, "z":  0.40 }
+			},
+			"travelNodes": []
+		},
+		"south shroud": {
+			"aetherytes": {
+				"quarrymill"   : { "x": 25.05, "y": 20.12, "z":  0.15 },
+				"camp tranquil": { "x": 16.88, "y": 28.59, "z":  0.27 }
+			},
+			"travelNodes": []
+		},
+		"north shroud": {
+			"aetherytes": {
+				"fallgourd float": { "x": 20.65, "y": 26.16, "z":  0.43 }
+			},
+			"travelNodes": []
+		},
+		"coerthas central highlands": {
+			"aetherytes": {
+				"camp dragonhead": { "x": 25.96, "y": 16.78, "z":  1.83 }
+			},
+			"travelNodes": []
+		},
+		"mor dhona": {
+			"aetherytes": {
+				"revenant's toll": { "x": 22.28, "y":  8.12, "z":  0.54 }
+			},
+			"travelNodes": []
+		},
+		"outer la noscea": {
+			"aetherytes": {
+				"camp overlook": { "x": 19.13, "y": 17.23, "z":  0.76 }
+			},
+			"travelNodes": []
+		},
+		"wolves' den pier": {
+			"aetherytes": {
+				"wolves' den pier": { "x": 22.30, "y": 21.18, "z": 100.05 }
+			},
+			"travelNodes": []
+		}
+	},
+	"hw": {
+		"coerthas western highlands": {
+			"aetherytes": {
+				"falcon's nest": { "x": 32.06, "y": 36.73, "z":  1.64 }
+			},
+			"travelNodes": []
+		},
+		"the dravanian forelands": {
+			"aetherytes": {
+				"tailfeather": { "x": 33.21, "y": 23.16, "z":  1.08 },
+				"anyx trine" : { "x": 16.48, "y": 23.20, "z":  1.40 }
+			},
+			"travelNodes": []
+		},
+		"the dravanian hinterlands": {
+			"aetherytes": {},
+			"travelNodes": [
+				{
+					"aetheryte": "idyllshire",
+					"distanceModifier": "3",
+					"position": { "x": 11.9, "y": 12.8, "z": 1.1 },
+					"path": "aethernet: prologue gate (western hinterlands)"
+				},
+				{
+					"aetheryte": "idyllshire",
+					"distanceModifier": "3",
+					"position": { "x": 18.1, "y": 10.4, "z": 0.6 },
+					"path": "aethernet: epilogue gate (eastern hinterlands)"
+				}
+			]
+		},
+		"the churning mists": {
+			"aetherytes": {
+				"moghome": { "x": 27.74, "y": 34.50, "z":  0.43 },
+				"zenith" : { "x": 10.86, "y": 28.83, "z":  1.34 }
+			},
+			"travelNodes": []
+		},
+		"the sea of clouds": {
+			"aetherytes": {
+				"camp cloudtop": { "x": 10.24, "y": 33.49, "z":  1.23 },
+				"ok' zundu"    : { "x": 10.30, "y": 14.26, "z":  1.92 }
+			},
+			"travelNodes": []
+		},
+		"azys lla": {
+			"aetherytes": {
+				"helix": { "x":  8.10, "y": 10.69, "z":  4.19 }
+			},
+			"travelNodes": []
+		},
+		"foundation": {
+			"aetherytes": {
+				"foundation": { "x": 21.28, "y": 23.44, "z": 100.11 }
+			},
+			"travelNodes": []
+		},
+		"the pillars": {
+			"aetherytes": {},
+			"travelNodes": []
+		},
+		"idyllshire": {
+			"aetherytes": {
+				"idyllshire": { "x": 24.00, "y": 22.18, "z": 102.11 }
+			},
+			"travelNodes": []
+		}
+	},
+	"sb": {
+		"the fringes": {
+			"aetherytes": {
+				"castrum oriens"    : { "x":  8.90, "y": 11.30, "z":  1.21 },
+				"the peering stones": { "x": 29.79, "y": 26.42, "z":  1.05 }
+			},
+			"travelNodes": []
+		},
+		"the ruby sea": {
+			"aetherytes": {
+				"tamamizu": { "x": 28.65, "y": 16.21, "z": -1.16 },
+				"onokoro" : { "x": 23.24, "y":  9.81, "z":  0.06 }
+			},
+			"travelNodes": [
+				{
+					"aetheryte": "onokoro",
+					"distanceModifier": "4.2",
+					"position": { "x": 32.6, "y": 38.2, "z": 0 },
+					"path": "confederate skipper"
+				},
+				{
+					"aetheryte": "kugane",
+					"distanceModifier": "3",
+					"position": { "x": 38.4, "y": 38.3, "z": 0 },
+					"path": "aethernet: the ruby price"
+				},
+				{
+					"aetheryte": "tamamizu",
+					"distanceModifier": "7.5",
+					"position": { "x": 34.4, "y": 20.4, "z": 0.1 },
+					"path": "leave the cave"
+				},
+				{
+					"aetheryte": "tamamizu",
+					"distanceModifier": "5.6",
+					"position": { "x": 27.3, "y": 18, "z": 0 },
+					"path": "fly up through the water"
+				}
+			]
+		},
+		"yanxia": {
+			"aetherytes": {
+				"namai"                  : { "x": 30.13, "y": 19.67, "z":  0.75 },
+				"the house of the fierce": { "x": 26.40, "y": 13.45, "z":  0.11 }
+			},
+			"travelNodes": []
+		},
+		"the peaks": {
+			"aetherytes": {
+				"ala gannha": { "x": 23.77, "y":  6.54, "z":  0.74 },
+				"ala ghiri" : { "x": 16.05, "y": 36.46, "z":  2.14 }
+			},
+			"travelNodes": []
+		},
+		"the lochs": {
+			"aetherytes": {
+				"porta praetoria"       : { "x":  8.44, "y": 21.16, "z":  0.55 },
+				"the ala mhigan quarter": { "x": 33.73, "y": 34.62, "z":  0.86 }
+			},
+			"travelNodes": []
+		},
+		"the azim steppe": {
+			"aetherytes": {
+				"reunion"        : { "x": 32.60, "y": 28.28, "z": -0.18 },
+				"the dawn throne": { "x": 23.05, "y": 22.21, "z":  1.18 },
+				"dhoro iloh"     : { "x":  6.39, "y": 23.81, "z":  1.30 }
+			},
+			"travelNodes": []
+		},
+		"kugane": {
+			"aetherytes": {
+				"kugane": { "x": 22.43, "y": 20.73, "z": 100.08 }
+			},
+			"travelNodes": []
+		},
+		"rhalgr's reach": {
+			"aetherytes": {
+				"rhalgr's reach": { "x": 23.04, "y": 23.43, "z": 100.02 }
+			},
+			"travelNodes": []
+		},
+		"the doman enclave": {
+			"aetherytes": {
+				"the doman enclave": { "x": 22.33, "y": 21.18, "z": 100.01 }
+			},
+			"travelNodes": []
+		}
+	},
+	"shb": {
+		"lakeland": {
+			"aetherytes": {
+				"fort jobb"            : { "x": 36.56, "y": 20.90, "z":  0.26 },
+				"the ostall imperative": { "x":  6.78, "y": 16.88, "z":  0.55 }
+			},
+			"travelNodes": []
+		},
+		"kholusia": {
+			"aetherytes": {
+				"stilltide": { "x": 34.85, "y": 27.26, "z":  0.29 },
+				"wright"   : { "x": 16.60, "y": 29.19, "z":  0.21 },
+				"tomra"    : { "x": 12.95, "y":  9.01, "z":  4.19 }
+			},
+			"travelNodes": []
+		},
+		"amh araeng": {
+			"aetherytes": {
+				"mord souq"                : { "x": 26.41, "y": 17.07, "z":  1.30 },
+				"twine"                    : { "x": 11.25, "y": 17.23, "z":  1.65 },
+				"the inn at journey's head": { "x": 29.46, "y": 27.64, "z":  0.93 }
+			},
+			"travelNodes": []
+		},
+		"il mheg": {
+			"aetherytes": {
+				"lydha lran": { "x": 14.59, "y": 31.73, "z":  0.49 },
+				"pla enni"  : { "x": 20.03, "y":  4.33, "z":  1.04 },
+				"wolekdorf" : { "x": 29.09, "y":  7.74, "z":  0.87 }
+			},
+			"travelNodes": []
+		},
+		"the rak'tika greatwood": {
+			"aetherytes": {
+				"slitherbough": { "x": 19.41, "y": 27.42, "z": -0.19 },
+				"fanow"       : { "x": 29.14, "y": 17.60, "z":  0.21 }
+			},
+			"travelNodes": []
+		},
+		"the tempest": {
+			"aetherytes": {
+				"the ondo cups"       : { "x": 32.72, "y": 17.50, "z": -1.95 },
+				"the macarenses angle": { "x": 18.65, "y": 25.84, "z": -8.29 }
+			},
+			"travelNodes": []
+		},
+		"the crystarium": {
+			"aetherytes": {
+				"the crystarium": { "x": 20.18, "y": 21.48, "z": 100.05 }
+			},
+			"travelNodes": []
+		},
+		"eulmore": {
+			"aetherytes": {
+				"eulmore": { "x": 21.48, "y": 21.50, "z": 100.82 }
+			},
+			"travelNodes": []
+		}
+	},
+	"ew": {
+		"labyrinthos": {
+			"aetherytes": {
+				"the archeion"    : { "x": 30.35, "y": 11.96, "z":  3.96 },
+				"sharlayan hamlet": { "x": 21.65, "y": 20.55, "z":  1.97 },
+				"aporia"          : { "x":  6.90, "y": 27.52, "z":  1.97 }
+			},
+			"travelNodes": []
+		},
+		"thavnair": {
+			"aetherytes": {
+				"yedlihmad"     : { "x": 25.35, "y": 34.06, "z":  0.08 },
+				"the great work": { "x": 10.93, "y": 22.22, "z":  0.06 },
+				"palaka's stand": { "x": 29.58, "y": 16.59, "z":  0.06 }
+			},
+			"travelNodes": []
+		},
+		"garlemald": {
+			"aetherytes": {
+				"camp broken glass": { "x": 13.32, "y": 31.08, "z":  0.44 },
+				"tertium"          : { "x": 31.86, "y": 17.91, "z": -0.15 }
+			},
+			"travelNodes": [
+				{
+					"aetheryte": "tertium",
+					"distanceModifier": "4.4",
+					"position": { "x": 31.5, "y": 12.8, "z": 0.4 },
+					"path": "leave the station"
+				}
+			]
+		},
+		"mare lamentorum": {
+			"aetherytes": {
+				"sinus lacrimarum": { "x": 10.16, "y": 34.49, "z":  1.35 },
+				"bestways burrow" : { "x": 21.48, "y": 11.24, "z": -1.29 }
+			},
+			"travelNodes": [
+				{
+					"aetheryte": "bestways burrow",
+					"distanceModifier": "8.8",
+					"position": { "x": 21.3, "y": 19.6, "z": 1.1 },
+					"path": "fly up out of the burrow"
+				}
+			]
+		},
+		"ultima thule": {
+			"aetherytes": {
+				"reah tahra"     : { "x": 10.60, "y": 26.87, "z":  0.30 },
+				"abode of the ea": { "x": 22.77, "y":  8.33, "z":  2.28 },
+				"base omicron"   : { "x": 31.27, "y": 28.15, "z":  3.94 }
+			},
+			"travelNodes": []
+		},
+		"elpis": {
+			"aetherytes": {
+				"anagnorisis"       : { "x": 24.68, "y": 24.02, "z":  1.73 },
+				"the twelve wonders": { "x":  8.81, "y": 32.33, "z":  1.41 },
+				"poieten oikos"     : { "x": 10.88, "y": 17.04, "z":  3.22 }
+			},
+			"travelNodes": []
+		},
+		"old sharlayan": {
+			"aetherytes": {
+				"old sharlayan": { "x": 21.48, "y": 21.48, "z": 100.05 }
+			},
+			"travelNodes": []
+		},
+		"radz-at-han": {
+			"aetherytes": {
+				"radz-at-han": { "x": 22.00, "y": 20.94, "z": 100.03 }
+			},
+			"travelNodes": []
+		}
+	},
+	"dt": {
+		"tuliyollal": {
+			"aetherytes": {
+				"tuliyollal": { "x": 21.00, "y": 21.63, "z": 100.01 }
+			},
+			"travelNodes": []
+		},
+		"solution nine": {
+			"aetherytes": {
+				"solution nine": { "x": 21.48, "y": 21.48, "z": 100.09 }
+			},
+			"travelNodes": []
+		},
+		"urqopacha": {
+			"aetherytes": {
+				"wachunpelo"   : { "x": 28.14, "y": 13.16, "z":  0.62 },
+				"worlar's echo": { "x": 30.79, "y": 34.18, "z":  3.37 }
+			},
+			"travelNodes": []
+		},
+		"kozama'uka": {
+			"aetherytes": {
+				"ok'hanu"     : { "x": 18.09, "y": 11.89, "z":  0.08 },
+				"many fires"  : { "x": 32.30, "y": 25.55, "z":  1.18 },
+				"earthenshire": { "x": 11.93, "y": 27.71, "z":  1.25 },
+				"dock poga"   : { "x": 37.24, "y": 16.76, "z":  0.15 }
+			},
+			"travelNodes": []
+		},
+		"yak t'el": {
+			"aetherytes": {
+				"iq br'aax": { "x": 13.54, "y": 12.84, "z":  3.25 },
+				"mamook"   : { "x": 35.91, "y": 32.00, "z":  1.69 }
+			},
+			"travelNodes": []
+		},
+		"shaaloani": {
+			"aetherytes": {
+				"hhusatahwi"          : { "x": 29.21, "y": 30.83, "z":  0.75 },
+				"sheshenewezi springs": { "x": 15.65, "y": 19.19, "z":  0.94 },
+				"mehwahhetsoan"       : { "x": 27.71, "y": 10.13, "z":  0.61 }
+			},
+			"travelNodes": []
+		},
+		"heritage found": {
+			"aetherytes": {
+				"yyasulani station": { "x": 31.77, "y": 25.63, "z":  1.61 },
+				"the outskirts"    : { "x": 17.02, "y":  9.80, "z":  0.47 },
+				"electrope strike" : { "x": 17.09, "y": 23.90, "z":  0.48 }
+			},
+			"travelNodes": []
+		},
+		"living memory": {
+			"aetherytes": {
+				"leynode mnemo": { "x": 21.48, "y": 37.42, "z":  0.77 },
+				"leynode pyro" : { "x": 34.64, "y": 15.80, "z":  0.49 },
+				"leynode aero" : { "x": 16.38, "y": 13.53, "z":  0.79 }
+			},
+			"travelNodes": []
+		}
+	}
+}

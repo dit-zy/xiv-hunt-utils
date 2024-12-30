@@ -1,5 +1,41 @@
 {
 	"arr": {
+		"limsa lominsa upper decks": {
+			"id": 128,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		},
+		"limsa lominsa lower decks": {
+			"id": 129,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		},
+		"ul'dah - steps of nald": {
+			"id": 130,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		},
+		"ul'dah - steps of thal": {
+			"id": 131,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		},
+		"new gridania": {
+			"id": 132,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		},
+		"old gridania": {
+			"id": 133,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		},
 		"middle la noscea": {
 			"id": 134,
 			"xOffset": "0.00",
@@ -11,6 +47,12 @@
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-1.00"
+		},
+		"mist": {
+			"id": 136,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
 		},
 		"eastern la noscea": {
 			"id": 137,
@@ -145,6 +187,24 @@
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-601.00"
+		},
+		"foundation": {
+			"id": 418,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		},
+		"the pillars": {
+			"id": 419,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		},
+		"idyllshire": {
+			"id": 478,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
 		}
 	},
 	"sb": {
@@ -183,6 +243,24 @@
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "1.00"
+		},
+		"kugane": {
+			"id": 628,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		},
+		"rhalgr's reach": {
+			"id": 635,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		},
+		"the doman enclave": {
+			"id": 759,
+			"xOffset": "23.00",
+			"yOffset": "34.00",
+			"zOffset": "-10000.00"
 		}
 	},
 	"shb": {
@@ -221,6 +299,18 @@
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "548.00"
+		},
+		"the crystarium": {
+			"id": 819,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		},
+		"eulmore": {
+			"id": 820,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
 		}
 	},
 	"ew": {
@@ -259,9 +349,33 @@
 			"xOffset": "0.00",
 			"yOffset": "0.00",
 			"zOffset": "-161.00"
+		},
+		"old sharlayan": {
+			"id": 962,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
+		},
+		"radz-at-han": {
+			"id": 963,
+			"xOffset": "0.00",
+			"yOffset": "0.00",
+			"zOffset": "-10000.00"
 		}
 	},
 	"dt": {
+		"tuliyollal": {
+			"id": 1185,
+			"xOffset": "50.00",
+			"yOffset": "-70.00",
+			"zOffset": "-10000.00"
+		},
+		"solution nine": {
+			"id": 1186,
+			"xOffset": "0.00",
+			"yOffset": "90.00",
+			"zOffset": "-10000.00"
+		},
 		"urqopacha": {
 			"id": 1187,
 			"xOffset": "0.00",
