@@ -8840,8 +8840,8 @@
 		"Mobs": [13146, 13442, 13443, 13444],
 		"ZoneName": "Kozama\u0027uka",
 		"MobNames": ["The Slammer", "The Raintriller", "Pkuucha", "Ihnuxokiy"],
-		"PositionFaloop": {"X": 751, "Y": 0, "Z": -216},
-		"Position": {"X": 764.1033, "Y": 8.981162, "Z": -201.92645}
+		"PositionFaloop": {"X": 767.681, "Y": 12.622, "Z": -49.380},
+		"Position": {"X": 767.681, "Y": 12.622, "Z": -49.380}
 	},
 	{
 		"Zone": 1188,
