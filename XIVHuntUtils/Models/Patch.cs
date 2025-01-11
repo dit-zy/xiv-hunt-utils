@@ -16,24 +16,36 @@ public enum Patch {
 
 public static class PatchExtensions {
 	private static readonly IDictionary<Patch, IList<Territory>> PatchHuntMaps = new (Patch, IList<Territory>)[] {
-			(Patch.ARR, Array.Empty<Territory>()), // TODO: add arr maps
+			(Patch.ARR, new[] {
+				LimsaLominsaLowerDecks, UldahStepsOfNald, NewGridania,
+				MiddleLaNoscea, LowerLaNoscea, EasternLaNoscea, WesternLaNoscea, UpperLaNoscea, OuterLaNoscea,
+				WesternThanalan, CentralThanalan, EasternThanalan, SouthernThanalan, NorthernThanalan,
+				CentralShroud, EastShroud, SouthShroud, NorthShroud,
+				CoerthasCentralHighlands, MorDhona
+			}),
+
 			(Patch.HW, new[] {
+				Foundation, Idyllshire,
 				CoerthasWesternHighlands, TheSeaOfClouds, AzysLla,
 				TheDravanianForelands, TheDravanianHinterlands, TheChurningMists,
 			}),
 			(Patch.SB, new[] {
+				Kugane, RhalgrsReach, TheDomanEnclave,
 				TheFringes, ThePeaks, TheLochs,
 				TheRubySea, Yanxia, TheAzimSteppe,
 			}),
 			(Patch.SHB, new[] {
+				TheCrystarium, Eulmore,
 				Lakeland, Kholusia, AmhAraeng,
 				IlMheg, TheRaktikaGreatwood, TheTempest,
 			}),
 			(Patch.EW, new[] {
+				OldSharlayan, RadzAtHan,
 				Labyrinthos, Thavnair, Garlemald,
 				MareLamentorum, Elpis, UltimaThule,
 			}),
 			(Patch.DT, new[] {
+				Tuliyollal, SolutionNine,
 				Urqopacha, Kozamauka, YakTel,
 				Shaaloani, HeritageFound, LivingMemory,
 			}),

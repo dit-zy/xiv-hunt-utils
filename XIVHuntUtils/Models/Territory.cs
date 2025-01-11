@@ -6,7 +6,31 @@ using static XIVHuntUtils.Models.Territory;
 namespace XIVHuntUtils.Models;
 
 public enum Territory {
+	// ARR
+	LimsaLominsaLowerDecks,
+	UldahStepsOfNald,
+	NewGridania,
+	MiddleLaNoscea,
+	LowerLaNoscea,
+	EasternLaNoscea,
+	WesternLaNoscea,
+	UpperLaNoscea,
+	OuterLaNoscea,
+	WesternThanalan,
+	CentralThanalan,
+	EasternThanalan,
+	SouthernThanalan,
+	NorthernThanalan,
+	CentralShroud,
+	EastShroud,
+	SouthShroud,
+	NorthShroud,
+	CoerthasCentralHighlands,
+	MorDhona,
+
 	// HW
+	Foundation,
+	Idyllshire,
 	CoerthasWesternHighlands,
 	TheSeaOfClouds,
 	AzysLla,
@@ -15,6 +39,9 @@ public enum Territory {
 	TheChurningMists,
 
 	// SB
+	Kugane,
+	RhalgrsReach,
+	TheDomanEnclave,
 	TheFringes,
 	ThePeaks,
 	TheLochs,
@@ -23,6 +50,8 @@ public enum Territory {
 	TheAzimSteppe,
 
 	// SHB
+	TheCrystarium,
+	Eulmore,
 	Lakeland,
 	Kholusia,
 	AmhAraeng,
@@ -31,6 +60,8 @@ public enum Territory {
 	TheTempest,
 
 	// EW
+	OldSharlayan,
+	RadzAtHan,
 	Labyrinthos,
 	Thavnair,
 	Garlemald,
@@ -39,6 +70,8 @@ public enum Territory {
 	UltimaThule,
 
 	// DT
+	Tuliyollal,
+	SolutionNine,
 	Urqopacha,
 	Kozamauka,
 	YakTel,
@@ -49,6 +82,29 @@ public enum Territory {
 
 public static class TerritoryExtensions {
 	private static readonly IDictionary<Territory, string> TerritoryNames = new Dictionary<Territory, string>() {
+		{ LimsaLominsaLowerDecks, "limsa lominsa lower decks" },
+		{ UldahStepsOfNald, "ul'dah - steps of nald" },
+		{ NewGridania, "new gridania" },
+		{ MiddleLaNoscea, "middle la noscea" },
+		{ LowerLaNoscea, "lower la noscea" },
+		{ EasternLaNoscea, "eastern la noscea" },
+		{ WesternLaNoscea, "western la noscea" },
+		{ UpperLaNoscea, "upper la noscea" },
+		{ OuterLaNoscea, "outer la noscea" },
+		{ WesternThanalan, "western thanalan" },
+		{ CentralThanalan, "central thanalan" },
+		{ EasternThanalan, "eastern thanalan" },
+		{ SouthernThanalan, "southern thanalan" },
+		{ NorthernThanalan, "northern thanalan" },
+		{ CentralShroud, "central shroud" },
+		{ EastShroud, "east shroud" },
+		{ SouthShroud, "south shroud" },
+		{ NorthShroud, "north shroud" },
+		{ CoerthasCentralHighlands, "coerthas central highlands" },
+		{ MorDhona, "mor dhona" },
+		
+		{ Foundation, "foundation" },
+		{ Idyllshire, "idyllshire" },
 		{ CoerthasWesternHighlands, "coerthas western highlands" },
 		{ TheSeaOfClouds, "the sea of clouds" },
 		{ AzysLla, "azys lla" },
@@ -56,6 +112,9 @@ public static class TerritoryExtensions {
 		{ TheDravanianHinterlands, "the dravanian hinterlands" },
 		{ TheChurningMists, "the churning mists" },
 
+		{ Kugane, "kugane" },
+		{ RhalgrsReach, "rhalgr's reach" },
+		{ TheDomanEnclave, "the doman enclave" },
 		{ TheFringes, "the fringes" },
 		{ ThePeaks, "the peaks" },
 		{ TheLochs, "the lochs" },
@@ -63,6 +122,8 @@ public static class TerritoryExtensions {
 		{ Yanxia, "yanxia" },
 		{ TheAzimSteppe, "the azim steppe" },
 
+		{ TheCrystarium, "the crystarium" },
+		{ Eulmore, "eulmore" },
 		{ Lakeland, "lakeland" },
 		{ Kholusia, "kholusia" },
 		{ AmhAraeng, "amh araeng" },
@@ -70,6 +131,8 @@ public static class TerritoryExtensions {
 		{ TheRaktikaGreatwood, "the rak'tika greatwood" },
 		{ TheTempest, "the tempest" },
 
+		{ OldSharlayan, "old sharlayan" },
+		{ RadzAtHan, "radz-at-han" },
 		{ Labyrinthos, "labyrinthos" },
 		{ Thavnair, "thavnair" },
 		{ Garlemald, "garlemald" },
@@ -77,6 +140,8 @@ public static class TerritoryExtensions {
 		{ Elpis, "elpis" },
 		{ UltimaThule, "ultima thule" },
 
+		{ Tuliyollal, "tuliyollal" },
+		{ SolutionNine, "solution nine" },
 		{ Urqopacha, "urqopacha" },
 		{ Kozamauka, "kozama'uka" },
 		{ YakTel, "yak t'el" },
@@ -110,7 +175,7 @@ public static class TerritoryExtensions {
 	public static Territory AsTerritory(this uint territoryId) => _idToTerritory[territoryId];
 
 	public static uint Id(this Territory territory) => _territoryToId[territory];
-	
+
 	public static string Name(this Territory territory) => TerritoryNames[territory];
 
 	public static uint DefaultInstances(this Territory territory) => DefaultTerritoryInstances[territory];
