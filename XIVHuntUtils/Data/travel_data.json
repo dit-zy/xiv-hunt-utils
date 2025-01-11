@@ -383,7 +383,7 @@
 		"garlemald": {
 			"aetherytes": {
 				"camp broken glass": { "x": 13.32, "y": 31.08, "z":  0.44 },
-				"tertium"          : { "x": 31.86, "y": 17.91, "z": -0.15 }
+				"tertium"          : { "x": 31.86, "y": 17.91, "z": -0.15, "isTravelNode": false }
 			},
 			"travelNodes": [
 				{
@@ -397,7 +397,7 @@
 		"mare lamentorum": {
 			"aetherytes": {
 				"sinus lacrimarum": { "x": 10.16, "y": 34.49, "z":  1.35 },
-				"bestways burrow" : { "x": 21.48, "y": 11.24, "z": -1.29 }
+				"bestways burrow" : { "x": 21.48, "y": 11.24, "z": -1.29, "isTravelNode": false }
 			},
 			"travelNodes": [
 				{

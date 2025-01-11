@@ -2,8 +2,9 @@
 
 namespace XIVHuntUtils.Models;
 
-public record struct Aetheryte(
+public record Aetheryte(
 	string Name,
 	Territory Territory,
-	Vector3 Position
+	Vector3 Position,
+	bool IsTravelNode
 );

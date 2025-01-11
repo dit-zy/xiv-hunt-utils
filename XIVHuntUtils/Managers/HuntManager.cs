@@ -17,22 +17,27 @@ namespace XIVHuntUtils.Managers;
 
 public class HuntManager : IHuntManager {
 	private readonly IPluginLog _log;
-	private readonly TerritoryManager _territoryManager;
-	private readonly MobManager _mobManager;
+	private readonly ITerritoryManager _territoryManager;
+	private readonly IMobManager _mobManager;
 	private readonly EntitySpawnDict _mobSpawns;
 	private readonly EntitySpawnDict _territorySpawns;
 	private readonly IDictionary<uint, IList<uint>> _territoryMarks;
 	private readonly IDictionary<uint, uint> _mobTerritories;
 
-	public HuntManager(IPluginLog log, TerritoryManager territoryManager, MobManager mobManager) :
+	public HuntManager(IPluginLog log, ITerritoryManager territoryManager, IMobManager mobManager) :
 		this(
 			log,
 			territoryManager,
 			mobManager,
 			typeof(HuntManager).Assembly.GetManifestResourceStream(XivHuntUtilsConstants.HuntDataResourceName)!
 		) { }
-	
-	public HuntManager(IPluginLog log, TerritoryManager territoryManager, MobManager mobManager, string huntDataFilename) :
+
+	public HuntManager(
+		IPluginLog log,
+		ITerritoryManager territoryManager,
+		IMobManager mobManager,
+		string huntDataFilename
+	) :
 		this(
 			log,
 			territoryManager,
@@ -40,7 +45,12 @@ public class HuntManager : IHuntManager {
 			new FileStream(huntDataFilename, FileMode.Open)
 		) { }
 
-	public HuntManager(IPluginLog log, TerritoryManager territoryManager, MobManager mobManager, Stream huntDataStream) {
+	public HuntManager(
+		IPluginLog log,
+		ITerritoryManager territoryManager,
+		IMobManager mobManager,
+		Stream huntDataStream
+	) {
 		_log = log;
 		_territoryManager = territoryManager;
 		_mobManager = mobManager;
@@ -98,10 +108,10 @@ public class HuntManager : IHuntManager {
 						.ToResult<Vec3s, string>($"no spawns found for territoryName: {territoryName}")
 			);
 
-	public Maybe<Vector3> FindNearestSpawn(uint territoryId, Vector2 position) =>
+	public Maybe<Vector3> FindNearestSpawn2d(uint territoryId, Vector2 position) =>
 		FindNearestSpawn(territoryId, spawn => (position - spawn.XY()).LengthSquared());
 
-	public Maybe<Vector3> FindNearestSpawn(uint territoryId, Vector3 position) =>
+	public Maybe<Vector3> FindNearestSpawn3d(uint territoryId, Vector3 position) =>
 		FindNearestSpawn(territoryId, spawn => (position - spawn).LengthSquared());
 
 	private Maybe<Vector3> FindNearestSpawn(
@@ -153,6 +163,10 @@ public class HuntManager : IHuntManager {
 	private AccumulatedResults<ParsedData, string> ParseTerritoryData(ExtractedData extractedData) {
 		var territoryResult = _territoryManager
 			.GetTerritoryId(extractedData.TerritoryName);
+
+		if (territoryResult.IsFailure) {
+			return territoryResult.Error;
+		}
 
 		var markSpawnsResults = extractedData.Marks
 			.SelectResults(

@@ -34,7 +34,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="DitzyExtensions" Version="1.2.2"/>
+		<PackageReference Include="DitzyExtensions" Version=">=1.2.2"/>
 		<PackageReference Include="Lib.Harmony.Thin" Version="2.3.3"/>
 		<PackageReference Include="JetBrains.Annotations" Version="2024.3.0"/>
 

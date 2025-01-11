@@ -1,4 +1,7 @@
 ﻿using System.Numerics;
+using DitzyExtensions;
+using XIVHuntUtils.Exceptions;
+using XIVHuntUtils.Models;
 using static XIVHuntUtils.Utils.MathUtils;
 
 namespace XIVHuntUtils.Utils;
@@ -54,4 +57,12 @@ public static class XivUtils {
 		bool isInHwTerritory = false
 	) =>
 		V3(mapX.AsRawXZ(isInHwTerritory), mapZ.AsRawY(territoryZOffset), mapY.AsRawXZ(isInHwTerritory));
+
+	public static Patch AsPatch(this string patchName) {
+		if (!patchName.AsEnum<Patch>().TryGetValue(out var patch, out var patchError)) {
+			throw new InitializationException(patchError);
+		}
+
+		return patch;
+	}
 }

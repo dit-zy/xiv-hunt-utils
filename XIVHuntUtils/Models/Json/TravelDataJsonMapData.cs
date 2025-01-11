@@ -4,7 +4,7 @@ namespace XIVHuntUtils.Models.Json;
 
 public class TravelDataJsonMapData {
 	[JsonProperty("aetherytes")]
-	public IDictionary<string, JsonPosition> Aetherytes { get; set; } = new Dictionary<string, JsonPosition>();
+	public IDictionary<string, TravelDataJsonAetheryte> Aetherytes { get; set; } = new Dictionary<string, TravelDataJsonAetheryte>();
 
 	[JsonProperty("travelNodes")] public IList<TravelDataJsonTravelNode> TravelNodes { get; set; } = [];
 };

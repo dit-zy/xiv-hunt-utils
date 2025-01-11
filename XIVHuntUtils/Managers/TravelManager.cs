@@ -12,9 +12,9 @@ namespace XIVHuntUtils.Managers;
 
 public class TravelManager : ITravelManager {
 	private readonly IPluginLog _log;
-	private readonly IDictionary<Territory, IList<Aetheryte>> _aetherytes;
+	private readonly IDictionary<uint, IList<Aetheryte>> _territoryAetherytes;
 	private readonly IDictionary<string, Aetheryte> _aetherytesByName;
-	private readonly IDictionary<Territory, IList<TravelNode>> _travelNodes;
+	private readonly IDictionary<uint, IList<TravelNode>> _territoryTravelNodes;
 
 	public TravelManager(IPluginLog log, ITerritoryManager territoryManager) : this(
 		log,
@@ -31,37 +31,54 @@ public class TravelManager : ITravelManager {
 	public TravelManager(IPluginLog log, ITerritoryManager territoryManager, Stream travelDataStream) {
 		_log = log;
 
-		LoadData(territoryManager, travelDataStream);
+		(_territoryAetherytes, _aetherytesByName, _territoryTravelNodes) = LoadData(territoryManager, travelDataStream);
 	}
 
 	public Maybe<Aetheryte> GetAetheryte(string aetheryteName) =>
 		_aetherytesByName.MaybeGet(aetheryteName);
 
-	public IList<Aetheryte> GetAetherytesInTerritory(Territory territory) =>
-		_aetherytes.MaybeGet(territory).GetValueOrDefault([]);
+	public IList<Aetheryte> GetAetherytesInTerritory(uint territoryId) =>
+		_territoryAetherytes.MaybeGet(territoryId).GetValueOrDefault([]);
 
 	public IList<Aetheryte> GetAllAetherytes() =>
 		_aetherytesByName.Values.AsList();
 
-	private IList<TravelNode> GetTravelNodes(uint territoryId) =>
-		_travelNodes
-			.MaybeGet(territoryId.AsTerritory())
+	public IList<TravelNode> GetTravelNodesInTerritory(uint territoryId) =>
+		_territoryTravelNodes
+			.MaybeGet(territoryId)
 			.GetValueOrDefault([]);
 
-	public Maybe<TravelNode> FindNearestTravelNode(uint territoryId, Vector2 position) =>
+	public Maybe<Aetheryte> FindNearestAetheryte2d(uint territoryId, Vector2 position) =>
+		FindNearestAetheryte(territoryId, routePos => (position - routePos.XY()).LengthSquared());
+
+	public Maybe<Aetheryte> FindNearestAetheryte3d(uint territoryId, Vector3 position) =>
+		FindNearestAetheryte(territoryId, routePos => (position - routePos).LengthSquared());
+
+	private Maybe<Aetheryte> FindNearestAetheryte(
+		uint territoryId,
+		Func<Vector3, float> distanceFunction
+	) => GetAetherytesInTerritory(territoryId)
+		.MinBy(node => distanceFunction(node.Position))
+		.AsMaybe();
+
+	public Maybe<TravelNode> FindNearestTravelNode2d(uint territoryId, Vector2 position) =>
 		FindNearestTravelNode(territoryId, routePos => (position - routePos.XY()).LengthSquared());
 
-	public Maybe<TravelNode> FindNearestTravelNode(uint territoryId, Vector3 position) =>
+	public Maybe<TravelNode> FindNearestTravelNode3d(uint territoryId, Vector3 position) =>
 		FindNearestTravelNode(territoryId, routePos => (position - routePos).LengthSquared());
 
 	private Maybe<TravelNode> FindNearestTravelNode(
 		uint territoryId,
 		Func<Vector3, float> distanceFunction
-	) => GetTravelNodes(territoryId)
+	) => GetTravelNodesInTerritory(territoryId)
 		.MinBy(node => distanceFunction(node.Position))
 		.AsMaybe();
 
-	private void LoadData(ITerritoryManager territoryManager, Stream travelDataStream) {
+	private (IDictionary<uint, IList<Aetheryte>>, IDictionary<string, Aetheryte>, IDictionary<uint, IList<TravelNode>>)
+		LoadData(
+			ITerritoryManager territoryManager,
+			Stream travelDataStream
+		) {
 		var data = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, TravelDataJsonMapData>>>(
 			new StreamReader(travelDataStream).ReadToEnd()
 		);
@@ -70,48 +87,102 @@ public class TravelManager : ITravelManager {
 			throw new JsonSerializationException("failed to parse travel data ;-;");
 		}
 
-		var aetherytes = data.Select(patchData => ExtractAetheryteData(territoryManager, patchData.Key, patchData.Value));
+		var aetherytes = data
+			.SelectMany(
+				patchData =>
+					patchData.Value.SelectResults(map => ExtractAetheryteData(territoryManager, map.Key, map.Value))
+			)
+			.ForEachError(error => _log.Debug(error))
+			.Value
+			.Flatten()
+			.Flatten()
+			.AsList();
+
+		var aetherytesByName = aetherytes.AsDict(aetheryte => aetheryte.Name);
+		var aetherytesByTerritory = aetherytes
+			.GroupBy(aetheryte => aetheryte.Territory)
+			.AsDict(group => group.Key.Id(), group => group.AsList());
+
+		var aetheryteTravelNodes = aetherytes
+			.Where(aetheryte => aetheryte.IsTravelNode)
+			.Select(
+				aetheryte => new TravelNode(
+					aetheryte,
+					true,
+					aetheryte.Territory,
+					0f,
+					aetheryte.Position,
+					""
+				)
+			)
+			.AsList();
+
+		var travelNodesByTerritory = data
+			.SelectMany(
+				patchData =>
+					patchData.Value.SelectMany(
+						map => ExtractTravelNodeData(territoryManager, aetherytesByName, map.Key, map.Value)
+					)
+			)
+			.ForEachError(error => _log.Debug(error))
+			.Value
+			.Flatten()
+			.Flatten()
+			.Concat(aetheryteTravelNodes)
+			.GroupBy(travelNode => travelNode.Territory)
+			.AsDict(group => group.Key.Id(), group => group.AsList());
+
+		return (aetherytesByTerritory, aetherytesByName, travelNodesByTerritory);
 	}
 
-	private void ExtractAetheryteData(
+	private Result<IEnumerable<Aetheryte>, string> ExtractAetheryteData(
 		ITerritoryManager territoryManager,
-		string patchName,
-		IDictionary<string, TravelDataJsonMapData> patchMapsData
-	) {
-		
-	}
+		string mapName,
+		TravelDataJsonMapData mapData
+	) =>
+		territoryManager
+			.GetTerritoryId(mapName)
+			.Map(
+				territoryId => mapData
+					.Aetherytes
+					.Select(
+						(aetheryteName, aetheryteData) => new Aetheryte(
+							aetheryteName.AsLower(),
+							territoryId.AsTerritory(),
+							aetheryteData.AsVector(),
+							aetheryteData.IsTravelNode
+						)
+					)
+			);
 
-	private void ExtractPatchData(
+	private AccumulatedResults<IEnumerable<TravelNode>, string> ExtractTravelNodeData(
 		ITerritoryManager territoryManager,
-		string patchName,
-		IDictionary<string, TravelDataJsonMapData> patchMapsData
+		IDictionary<string, Aetheryte> aetherytes,
+		string mapName,
+		TravelDataJsonMapData mapData
 	) {
-		if (!patchName.AsEnum<Patch>().TryGetValue(out var patch, out var patchError)) {
-			throw new Exception(patchError);
-		}
-
-		var q = patchMapsData.Select(
-			patchMapData => {
-				var mapName = patchMapData.Key;
-				var mapTravelData = patchMapData.Value;
-
-				var territoryResult = territoryManager.GetTerritoryId(mapName);
-				return territoryResult
-					.Map(
-						territoryId => {
-							var aetherytes = mapTravelData
-								.Aetherytes
-								.Select(aetheryteData => (name: aetheryteData.Key, position: aetheryteData.Value.AsVector()))
-								.AsList();
-
-							return (
-								mapName: mapName,
-								aetherytes: aetherytes,
-								travelNodes: mapTravelData.TravelNodes
-							);
-						}
-					);
-			}
-		);
+		return territoryManager
+			.GetTerritoryId(mapName)
+			.AsAccumulatedResults()
+			.SelectMany(
+				territoryId => mapData
+					.TravelNodes
+					.SelectResults(
+						travelNode => aetherytes
+							.MaybeGet(travelNode.Aetheryte.AsLower())
+							.ToResult<Aetheryte, string>($"no aetheryte found with name: {travelNode.Aetheryte.AsLower()}")
+							.Map(
+								aetheryte =>
+									new TravelNode(
+										aetheryte,
+										false,
+										territoryId.AsTerritory(),
+										travelNode.DistanceModifier,
+										travelNode.Position.AsVector(),
+										travelNode.Path
+									)
+							)
+					)
+			);
 	}
 }

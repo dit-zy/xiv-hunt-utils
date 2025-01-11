@@ -33,12 +33,14 @@
 	},
 	"ew": {
 		"garlemald": [
+			{ "aetheryte": "tertium", "isTravelNode": false },
 			{
 				"aetheryte": "tertium", "distanceModifier": 4.4, "position": {"x": 31.5, "y": 12.8, "z": 0.4},
 				"path": "leave the station"
 			}
 		],
 		"mare lamentorum": [
+			{ "aetheryte": "bestways burrow", "isTravelNode": false },
 			{
 				"aetheryte": "bestways burrow", "distanceModifier": 8.8, "position": {"x": 21.3, "y": 19.6, "z": 1.1},
 				"path": "fly up out of the burrow"
