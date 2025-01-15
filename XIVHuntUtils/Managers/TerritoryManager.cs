@@ -9,6 +9,7 @@ using DitzyExtensions.Functional;
 using Lumina.Excel.Sheets;
 using XIVHuntUtils.Models;
 using static DitzyExtensions.EnumExtensions;
+using Aetheryte = Lumina.Excel.Sheets.Aetheryte;
 
 namespace XIVHuntUtils.Managers;
 
@@ -36,8 +37,8 @@ public class TerritoryManager : ITerritoryManager {
 		_idToName
 			.MaybeGet(_pluginInterface.UiLanguage)
 			.Bind(nameMap => nameMap.MaybeGet(territoryId));
-	
-	public Result<string,string> GetTerritoryName(uint territoryId) =>
+
+	public Result<string, string> GetTerritoryName(uint territoryId) =>
 		FindTerritoryName(territoryId)
 			.ToResult<string, string>($"Failed to find a territoryName for territory id: {territoryId}");
 
@@ -75,27 +76,31 @@ public class TerritoryManager : ITerritoryManager {
 		var dataDicts = GetEnumValues<ClientLanguage>()
 			.Select(
 				language => {
-					var placeNames = dataManager
-						.GetExcelSheet<PlaceName>(language)!
-						.Where(name => supportedPlaceIds.Contains(name.RowId))
-						.Select(name => (name.RowId, name.Name.ToString()))
-						.AsDict();
+					var aetheryteTerritories = dataManager.GetExcelSheet<Aetheryte>(language)
+						.Where(aetheryte => aetheryte is { IsAetheryte: true, PlaceName.RowId: > 1, Territory.IsValid: true })
+						.Where(aetheryte => supportedPlaceIds.Contains(aetheryte.Territory.Value.PlaceName.RowId))
+						.Select(aetheryte => aetheryte.Territory.Value)
+						.AsList();
 
 					var idToName = dataManager
 						.GetExcelSheet<TerritoryType>(language)!
 						.Where(territory => territory.TerritoryIntendedUse.RowId == 1)
-						.Where(territory => placeNames.ContainsKey(territory.PlaceName.RowId))
-						.Select(territory => (mapId: territory.RowId, name: placeNames[territory.PlaceName.RowId]))
+						.Where(territory => supportedPlaceIds.Contains(territory.PlaceName.RowId))
+						.Concat(aetheryteTerritories)
+						.Select(territory => (mapId: territory.RowId, name: territory.PlaceName.Value.Name.ToString()))
 						.GroupBy(map => map.name)
 						.Select(
 							grouping => {
 								if (1 < grouping.Count()) {
-									_log.Debug(
-										"[{2:l}] Duplicate maps found for name [{0:l}]: {1:l}",
-										grouping.Key,
-										grouping.Select(place => place.mapId.ToString()).Join(", "),
-										language.GetLanguageCode()
-									);
+									var dedupedGrouping = grouping.ToImmutableHashSet();
+									if (1 < dedupedGrouping.Count) {
+										_log.Debug(
+											"[{2:l}] Duplicate maps found for name [{0:l}]: {1:l}",
+											grouping.Key,
+											dedupedGrouping.Select(place => place.mapId.ToString()).Join(", "),
+											language.GetLanguageCode()
+										);
+									}
 								}
 								return grouping.First();
 							}
