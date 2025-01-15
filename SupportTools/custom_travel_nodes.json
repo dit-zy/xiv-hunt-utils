@@ -1,5 +1,27 @@
 {
+	"arr": {
+		"coerthas central highlands": [
+			{
+				"aetheryte": "foundation", "distanceModifier": 3.0, "position": {"x": 18.2, "y": 15.0, "z": 1.7},
+				"path": "aethernet: gates of judgement"
+			}
+		],
+		"western la noscea": {
+			"aetheryte": "aleport", "distanceModifier": 6.5, "position": {"x": 15.6, "y": 29.7, "z": 0.0},
+			"path": "ferry skipper -> the isles of umbra"
+		},
+		"upper la noscea": {
+			"aetheryte": "camp bronze lake", "distanceModifier": 10.5, "position": {"x": 14.7, "y": 23.7, "z": 0.1},
+			"path": "ferry skipper -> memeroon's trading post"
+		}
+	},
 	"hw": {
+		"coerthas western highlands": [
+			{
+				"aetheryte": "tailfeather", "distanceModifier": 12.0, "position": {"x": 5.9, "y": 9.7, "z": 0.8},
+				"path": "fly to coerthas western highlands"
+			}
+		],
 		"the dravanian hinterlands": [
 			{
 				"aetheryte": "idyllshire", "distanceModifier": 3.0, "position": {"x": 11.9, "y": 12.8, "z": 1.1},
@@ -8,6 +30,10 @@
 			{
 				"aetheryte": "idyllshire", "distanceModifier": 3.0, "position": {"x": 18.1, "y": 10.4, "z": 0.6},
 				"path": "aethernet: epilogue gate (eastern hinterlands)"
+			},
+			{
+				"aetheryte": "anyx trine", "distanceModifier": 18.0, "position": {"x": 40.3, "y": 26.3, "z": 1.7},
+				"path": "fly to dravanian hinterlands"
 			}
 		]
 	},
@@ -29,6 +55,12 @@
 				"aetheryte": "tamamizu", "distanceModifier": 5.6, "position": {"x": 27.3, "y": 18.0, "z": 0.0},
 				"path": "fly up through the water"
 			}
+		],
+		"yanxia": [
+			{
+				"aetheryte": "the doman enclave", "distanceModifier": 3.0, "position": {"x": 11.7, "y": 32.2, "z": 0.0},
+				"path": "aethernet: the one river"
+			}
 		]
 	},
 	"ew": {
@@ -44,6 +76,18 @@
 			{
 				"aetheryte": "bestways burrow", "distanceModifier": 8.8, "position": {"x": 21.3, "y": 19.6, "z": 1.1},
 				"path": "fly up out of the burrow"
+			}
+		]
+	},
+	"dt": {
+		"living memory": [
+			{
+				"aetheryte": "leynode mnemo", "distanceModifier": 6.0, "position": {"x": 25.7, "y": 34.6, "z": 0.2},
+				"path": "yesterland guard -> yesterland"
+			},
+			{
+				"aetheryte": "leynode mnemo", "distanceModifier": 6.0, "position": {"x": 17.8, "y": 22.7, "z": 0.5},
+				"path": "windspath gardens guard -> windspath gardens"
 			}
 		]
 	}
