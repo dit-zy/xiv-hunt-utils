@@ -4,7 +4,7 @@
 	<PropertyGroup Label="feature">
 		<Authors>dit-zy</Authors>
 		<Title>XIV Hunt Utils</Title>
-		<Version>1.2.1-10-SNAPSHOT</Version>
+		<Version>1.3.0</Version>
 		<Description>a collection of utilities for hunt plugins.</Description>
 		<RepositoryUrl>https://github.com/dit-zy/xiv-hunt-utils</RepositoryUrl>
 		<TargetFramework>net8.0-windows</TargetFramework>
@@ -17,7 +17,7 @@
 		<PackageReference Remove="DalamudPackager"/>
 		
 		<PackageReference Include="CSharpFunctionalExtensions" Version="3.1.0"/>
-		<PackageReference Include="DitzyExtensions" Version="1.2.3-2-snapshot"/>
+		<PackageReference Include="DitzyExtensions" Version="1.3.0"/>
 	</ItemGroup>
 
 	<ItemGroup>
