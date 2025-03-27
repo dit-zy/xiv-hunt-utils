@@ -8,6 +8,9 @@ namespace XivHuntUtils.Tests.Generators;
  * this is needed by the incremental generator framework in order to cache correctly.
  */
 internal class EqArray<T> : IEquatable<EqArray<T>> {
+	
+	public static EqArray<T> Empty { get; } = new([]);
+	
 	public IList<T> Values { get; }
 
 	public EqArray(IEnumerable<T> source) {
@@ -16,11 +19,10 @@ internal class EqArray<T> : IEquatable<EqArray<T>> {
 
 	public bool Equals(EqArray<T>? other) {
 		if (this == other) return true;
-		if (Values == other?.Values) return true;
+		if (ReferenceEquals(Values, other?.Values)) return true;
 		if (Values.Count != other!.Values.Count) return false;
-		for (var i = 0; i < Values.Count; i++) {
-			if (!Equals(Values[i], other.Values[i])) return false;
-		}
-		return true;
+		return Values
+			.Select((t, i) => Equals(t, other.Values[i]))
+			.All(b => b);
 	}
 }
