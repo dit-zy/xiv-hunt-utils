@@ -1,14 +1,31 @@
 ﻿using CSharpFunctionalExtensions;
 using DitzyExtensions;
+using XIVHuntUtils.Models;
 
 namespace XIVHuntUtils.Managers;
 
 public interface IMobManager {
-	public Maybe<uint> FindMobId(string mobName);
+	Maybe<HuntMarkData> FindMob(uint mobId);
 
-	public Result<uint, string> GetMobId(string mobName);
+	Maybe<HuntMarkData> FindMob(string mobName);
 
-	public Maybe<string> FindMobName(uint mobId);
+	Maybe<uint> FindMobId(string mobName);
 
-	public Result<string, string> GetMobName(uint mobId);
+	Maybe<string> FindMobName(uint mobId);
+
+	Maybe<Rank> FindMobRank(uint mobId);
+
+	Maybe<Rank> FindMobRank(string mobName);
+
+	Result<HuntMarkData, string> GetMob(uint mobId);
+
+	Result<HuntMarkData, string> GetMob(string mobName);
+
+	Result<uint, string> GetMobId(string mobName);
+
+	Result<string, string> GetMobName(uint mobId);
+
+	Result<Rank, string> GetMobRank(uint mobId);
+
+	Result<Rank, string> GetMobRank(string mobName);
 }
