@@ -145,7 +145,7 @@ public class TravelManager : ITravelManager {
 			.Map(
 				territoryId => mapData
 					.Aetherytes
-					.Select(
+					.SelectEntries(
 						(aetheryteName, aetheryteData) => new Aetheryte(
 							aetheryteName.AsLower(),
 							territoryId.AsTerritory(),
