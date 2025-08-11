@@ -59,7 +59,7 @@ public class MobManager : IMobManager {
 
 		var notoriousMonsters = dataManager.GetExcelSheet<NotoriousMonster>(ClientLanguage.English)!
 			.Select(monster => (monster.BNpcName.RowId, monster.Rank))
-			.Where(monster => monster.Rank is > 0 and <= 3)
+			.Where(monster => monster.Rank is > 0 and <= 3 && monster.RowId != 0)
 			.AsDict();
 
 		var ranks = EnumExtensions.GetEnumValues<Rank>();
