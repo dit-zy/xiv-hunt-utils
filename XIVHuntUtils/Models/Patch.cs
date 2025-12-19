@@ -18,34 +18,28 @@ public enum Patch {
 public static class PatchExtensions {
 	private static readonly IDictionary<Patch, IList<Territory>> PatchHuntMaps = new (Patch, IList<Territory>)[] {
 			(Patch.ARR, [
-				LimsaLominsaLowerDecks, UldahStepsOfNald, NewGridania,
 				MiddleLaNoscea, LowerLaNoscea, EasternLaNoscea, WesternLaNoscea, UpperLaNoscea, OuterLaNoscea,
 				WesternThanalan, CentralThanalan, EasternThanalan, SouthernThanalan, NorthernThanalan,
 				CentralShroud, EastShroud, SouthShroud, NorthShroud,
 				CoerthasCentralHighlands, MorDhona
 			]),
 			(Patch.HW, [
-				Foundation, Idyllshire,
 				CoerthasWesternHighlands, TheSeaOfClouds, AzysLla,
 				TheDravanianForelands, TheDravanianHinterlands, TheChurningMists
 			]),
 			(Patch.SB, [
-				Kugane, RhalgrsReach, TheDomanEnclave,
 				TheFringes, ThePeaks, TheLochs,
 				TheRubySea, Yanxia, TheAzimSteppe
 			]),
 			(Patch.SHB, [
-				TheCrystarium, Eulmore,
 				Lakeland, Kholusia, AmhAraeng,
 				IlMheg, TheRaktikaGreatwood, TheTempest
 			]),
 			(Patch.EW, [
-				OldSharlayan, RadzAtHan,
 				Labyrinthos, Thavnair, Garlemald,
 				MareLamentorum, Elpis, UltimaThule
 			]),
 			(Patch.DT, [
-				Tuliyollal, SolutionNine,
 				Urqopacha, Kozamauka, YakTel,
 				Shaaloani, HeritageFound, LivingMemory
 			]),
@@ -54,8 +48,26 @@ public static class PatchExtensions {
 		.AsDict()
 		.VerifyEnumDictionary();
 
-	private static readonly IDictionary<Territory, Patch> TerritoryPatches =
+	private static readonly IDictionary<Patch, IList<Territory>> PatchNonHuntMaps = new (Patch, IList<Territory>)[] {
+			(Patch.ARR, [ LimsaLominsaLowerDecks, UldahStepsOfNald, NewGridania ]),
+			(Patch.HW, [ Foundation, Idyllshire ]),
+			(Patch.SB, [ Kugane, RhalgrsReach, TheDomanEnclave ]),
+			(Patch.SHB, [ TheCrystarium, Eulmore ]),
+			(Patch.EW, [ OldSharlayan, RadzAtHan ]),
+			(Patch.DT, [ Tuliyollal, SolutionNine ]),
+		}
+		.Select(patch => (patch.Item1, patch.Item2.AsList()))
+		.AsDict()
+		.VerifyEnumDictionary();
+
+	private static readonly IDictionary<Patch, IList<Territory>> PatchMaps =
 		PatchHuntMaps
+			.Concat(PatchNonHuntMaps)
+			.AsDict()
+			.VerifyEnumDictionary();
+
+	private static readonly IDictionary<Territory, Patch> TerritoryPatches =
+		PatchMaps
 			.SelectMany(patch => patch.Value.Zip(patch.Key.Repeat(patch.Value.Count)))
 			.AsDict()
 			.VerifyEnumDictionary();
@@ -71,6 +83,10 @@ public static class PatchExtensions {
 
 	public static IList<Territory> HuntMaps(this Patch patch) => PatchHuntMaps[patch];
 	
+	public static IList<Territory> NonHuntMaps(this Patch patch) => PatchNonHuntMaps[patch];
+	
+	public static IList<Territory> Maps(this Patch patch) => PatchMaps[patch];
+
 	public static Patch ContainingPatch(this Territory territory) => TerritoryPatches[territory];
 
 	public static uint MaxMarks(this Patch patch) {

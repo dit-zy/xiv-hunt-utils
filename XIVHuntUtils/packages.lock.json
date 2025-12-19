@@ -1,28 +1,27 @@
 {
   "version": 1,
   "dependencies": {
-    "net9.0-windows7.0": {
+    "net10.0-windows7.0": {
       "CSharpFunctionalExtensions": {
         "type": "Direct",
-        "requested": "[3.5.1, )",
-        "resolved": "3.5.1",
-        "contentHash": "J9wNzOzRdc4pfO3WREYR19zjp585y7/y9TKQXKkbxxnXt7N6h2Q8AjP0+bayrgRVxpU9COaFMA8961xbptYsUg=="
+        "requested": "[3.6.0, )",
+        "resolved": "3.6.0",
+        "contentHash": "c+oWbfDKKjpOLPMxn/iPn1GL24YTJMtOiGfj0AsDKZ2v6/Mr6V7BfzfWLg6KqNRx3KRy3KcQE680SwvDTI/jcg=="
       },
       "DitzyExtensions": {
         "type": "Direct",
-        "requested": "[2.0.0, )",
-        "resolved": "2.0.0",
-        "contentHash": "8U9kB8+4bBkNcBqfnG200BwysCBhokgPKpuj7NgtzQXy/JPGol6SSxFuq/xCAy/zSYsZUHp1rzf/OC2LrgmzNQ==",
+        "requested": "[3.0.0, )",
+        "resolved": "3.0.0",
+        "contentHash": "a9eJ8X7wHfpzNNYW0FIPHbsk0sB3BZDmvmgB4uBDDfp+4oWkqpZcX16IxiSg99F5q+KSSeT5MGQ3GJHMMPL4+g==",
         "dependencies": {
-          "CSharpFunctionalExtensions": "3.5.1",
-          "System.Numerics.Vectors": "4.6.1"
+          "CSharpFunctionalExtensions": "3.5.1"
         }
       },
       "DotNet.ReproducibleBuilds": {
         "type": "Direct",
-        "requested": "[1.2.25, )",
-        "resolved": "1.2.25",
-        "contentHash": "xCXiw7BCxHJ8pF6wPepRUddlh2dlQlbr81gXA72hdk4FLHkKXas7EH/n+fk5UCA/YfMqG1Z6XaPiUjDbUNBUzg=="
+        "requested": "[1.2.39, )",
+        "resolved": "1.2.39",
+        "contentHash": "fcFN01tDTIQqDuTwr1jUQK/geofiwjG5DycJQOnC72i1SsLAk1ELe+apBOuZ11UMQG8YKFZG1FgvjZPbqHyatg=="
       },
       "System.Numerics.Vectors": {
         "type": "Direct",
