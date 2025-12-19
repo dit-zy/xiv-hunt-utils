@@ -10,11 +10,11 @@
       },
       "DitzyExtensions": {
         "type": "Direct",
-        "requested": "[3.0.0, )",
-        "resolved": "3.0.0",
-        "contentHash": "a9eJ8X7wHfpzNNYW0FIPHbsk0sB3BZDmvmgB4uBDDfp+4oWkqpZcX16IxiSg99F5q+KSSeT5MGQ3GJHMMPL4+g==",
+        "requested": "[3.2.0, )",
+        "resolved": "3.2.0",
+        "contentHash": "cfuXYy9wah4cdzMqQF8Y0ftHgNdMWh37b28owUPjpSOwP71m8JsDbw9QM3j1/byjdrfB5EEQNWe7Yag+Y6FjDg==",
         "dependencies": {
-          "CSharpFunctionalExtensions": "3.5.1"
+          "CSharpFunctionalExtensions": "3.6.0"
         }
       },
       "DotNet.ReproducibleBuilds": {
@@ -22,12 +22,6 @@
         "requested": "[1.2.39, )",
         "resolved": "1.2.39",
         "contentHash": "fcFN01tDTIQqDuTwr1jUQK/geofiwjG5DycJQOnC72i1SsLAk1ELe+apBOuZ11UMQG8YKFZG1FgvjZPbqHyatg=="
-      },
-      "System.Numerics.Vectors": {
-        "type": "Direct",
-        "requested": "[4.6.1, )",
-        "resolved": "4.6.1",
-        "contentHash": "sQxefTnhagrhoq2ReR0D/6K0zJcr9Hrd6kikeXsA1I8kOCboTavcUC4r7TSfpKFeE163uMuxZcyfO1mGO3EN8Q=="
       }
     }
   }
