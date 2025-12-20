@@ -62,7 +62,10 @@ public static class PatchExtensions {
 
 	private static readonly IDictionary<Patch, IList<Territory>> PatchMaps =
 		PatchHuntMaps
-			.Concat(PatchNonHuntMaps)
+			.AsPairs()
+			.Concat(PatchNonHuntMaps.AsPairs())
+			.GroupBy(kv => kv.key)
+			.Select(group => (group.Key, group.SelectSecond().Flatten().AsList()))
 			.AsDict()
 			.VerifyEnumDictionary();
 
