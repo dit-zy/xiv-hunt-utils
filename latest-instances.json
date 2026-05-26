@@ -1,13 +1,15 @@
 {
-  "instances": {
-    /* example:
-      "shb": {
-        "lakeland": 2,
-        "il mehg": 3
-      },
-      "dt": {
-        "living memory": 2
-      }
-    */
-  }
+	"instances" : {
+		"arr" : {},
+		"hw" : {},
+		"sb" : {},
+		"shb" : {},
+		"ew" : {
+			"garlemald" : 2,
+			"mare lamentorum" : 2
+		},
+		"dt" : {
+			"yak t'el" : 2
+		}
+	}
 }
