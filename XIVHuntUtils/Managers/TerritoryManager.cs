@@ -63,7 +63,7 @@ public class TerritoryManager : ITerritoryManager {
 		_log.Debug("Building map data from game files...");
 
 		var supportedMapNames = GetEnumValues<Patch>()
-			.SelectMany(patch => patch.HuntMaps())
+			.SelectMany(patch => patch.HuntMaps().Concat(patch.NonHuntMaps()))
 			.Select(map => map.Name())
 			.ToImmutableHashSet();
 
